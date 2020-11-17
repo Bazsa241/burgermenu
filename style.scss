@@ -1,0 +1,135 @@
+$primary_bg: #ccc;
+$secondary_bg: #333;
+
+@mixin flex-center($content, $direction: row) {
+  display: flex;
+  justify-content: $content;
+  align-items: center;
+  flex-direction: $direction;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  background: $primary_bg;
+  @include flex-center(space-between, column);
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: $secondary_bg;
+  display: flex;
+  justify-content: space-between;
+
+  input[type="checkbox"] {
+    display: none;
+
+    &:checked {    
+
+      & ~ label {
+        .span-top {
+          transform: translateY(0) rotate(45deg);
+        }
+
+        .span-bottom {
+          transform: translateY(-1px) rotate(-45deg);
+        }
+      }
+
+      & ~ ul {
+        display: flex;
+      }
+    }
+  }
+
+   .icon {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     width: 3rem;
+     height: 3rem;
+    i {
+      color: $primary_bg;
+      font-size: 2rem;
+    }
+  }
+
+  label {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: calc(3rem + 2px);
+    
+    span {
+      display: block;
+      margin: 0 1rem;
+      height: 2px;
+      width: 20px;
+      background-color: $primary_bg;
+    }
+
+    .span-top {
+      transform: translateY(-3px);
+    }
+
+    .span-bottom {
+      transform: translateY(3px);
+    }
+  }
+  
+  ul {
+    display: none;
+    flex-direction: column;
+    list-style: none;
+
+     li a {
+       display: block;
+       padding: 1rem;
+       color: $primary_bg;
+       text-decoration: none;
+
+       &:hover {
+         background: $primary_bg;
+         color: $secondary_bg;
+       }
+     }
+  }
+
+}
+
+h1 {
+  align-self: center;
+  color: $secondary_bg;
+}
+
+footer {
+background: $secondary_bg;
+width: 100%;
+
+  ul {    
+    display: flex;
+    justify-content: center;
+    list-style: none;
+
+    li {
+      p {
+        color: $primary_bg;
+        padding: 1rem;
+      }
+
+      a {
+        color: $primary_bg;
+        display: block;
+        padding: 1rem;
+      }
+    }
+  }
+}

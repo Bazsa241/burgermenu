@@ -1,0 +1,106 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  background: #ccc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #333;
+  display: flex;
+  justify-content: space-between;
+}
+nav input[type=checkbox] {
+  display: none;
+}
+nav input[type=checkbox]:checked ~ label .span-top {
+  transform: translateY(0) rotate(45deg);
+}
+nav input[type=checkbox]:checked ~ label .span-bottom {
+  transform: translateY(-1px) rotate(-45deg);
+}
+nav input[type=checkbox]:checked ~ ul {
+  display: flex;
+}
+nav .icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 3rem;
+  height: 3rem;
+}
+nav .icon i {
+  color: #ccc;
+  font-size: 2rem;
+}
+nav label {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: calc(3rem + 2px);
+}
+nav label span {
+  display: block;
+  margin: 0 1rem;
+  height: 2px;
+  width: 20px;
+  background-color: #ccc;
+}
+nav label .span-top {
+  transform: translateY(-3px);
+}
+nav label .span-bottom {
+  transform: translateY(3px);
+}
+nav ul {
+  display: none;
+  flex-direction: column;
+  list-style: none;
+}
+nav ul li a {
+  display: block;
+  padding: 1rem;
+  color: #ccc;
+  text-decoration: none;
+}
+nav ul li a:hover {
+  background: #ccc;
+  color: #333;
+}
+
+h1 {
+  align-self: center;
+  color: #333;
+}
+
+footer {
+  background: #333;
+  width: 100%;
+}
+footer ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+}
+footer ul li p {
+  color: #ccc;
+  padding: 1rem;
+}
+footer ul li a {
+  color: #ccc;
+  display: block;
+  padding: 1rem;
+}
+
+/*# sourceMappingURL=style.css.map */
